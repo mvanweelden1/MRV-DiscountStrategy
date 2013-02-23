@@ -37,7 +37,7 @@ public class LineItem {
     
     public static void main(String[] args) {
         
-        LineItem lineitem = new LineItem("A101", 2);
+        LineItem lineitem = new LineItem("B205", 2);
         
         System.out.println(lineitem.getLineItem());
     }
