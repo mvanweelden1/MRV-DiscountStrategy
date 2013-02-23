@@ -26,12 +26,21 @@ public class LineItem {
         return subTotal;
     }
     
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+    
     public final String getLineItem(){
         String id = this.product.getProdID();
         String name = this.product.getProdName();
         double price = this.product.getUnitCost();
         double subTotal = this.getSubTotal();
-        return id + " " + name + " " + price + " " + subTotal;
+        
+        return id + " " + name + "\t" + qty + "\t" + price + "\t\t" + subTotal;
         
                 
         
@@ -48,13 +57,7 @@ public class LineItem {
 //        System.out.println(lineitem.getLineItem());
 //    }
 
-    public int getQty() {
-        return qty;
-    }
-
-    public void setQty(int qty) {
-        this.qty = qty;
-    }
+    
     
     
     

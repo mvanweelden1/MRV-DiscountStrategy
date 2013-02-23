@@ -9,8 +9,6 @@ public class Receipt {
     private LineItem[] lineItems = new LineItem[0];
     private Customer customer;
 
-    public Receipt() {
-    }
 
     public final void addCustomer(String custID) {
 
@@ -67,17 +65,23 @@ public class Receipt {
     }
 
     public void generateReceipt() {
-
+        
+        System.out.println("ID\t" + "Customer Name");
+        System.out.println("----------------------------------");
         customer.getCustomer();
+        System.out.println("==================================");
+        System.out.println("Prod ID" + "  Prod Name\t" + "Qty\t" + "Unit Price\t" + "Subtotal");
 
         for (int i = 0; i < lineItems.length; i++) {
 
             System.out.println(lineItems[i].getLineItem());
         }
         
-        System.out.println("Total Before Discount: " + getTotalBeforeDiscount());
+        System.out.println();
         
-        System.out.println("Total After Discount: " + getTotalAfterDiscount());
+        System.out.println("Total Before Discount: \t" + getTotalBeforeDiscount());
+        
+        System.out.println("Total After Discount: \t" + getTotalAfterDiscount());
 
     }
 //    public static void main(String[] args) {
