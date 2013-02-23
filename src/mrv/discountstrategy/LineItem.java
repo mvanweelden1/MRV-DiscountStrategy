@@ -15,22 +15,22 @@ public class LineItem {
         
     }
     
-    public double getUnitCost(){
+    public final double getUnitCost(){
         
         return this.product.getUnitCost();
     }
     
-    public double getSubTotal() {
+    public final double getSubTotal() {
         
         double subTotal = (this.product.getUnitCost() * qty) - this.product.getDiscount(qty);
         return subTotal;
     }
     
-    public int getQty() {
+    public final int getQty() {
         return qty;
     }
 
-    public void setQty(int qty) {
+    public final void setQty(int qty) {
         this.qty = qty;
     }
     

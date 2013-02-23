@@ -18,39 +18,39 @@ public class Product {
         this.discount = discount;
     }
     
-    public double getDiscount(int qty){  
+    public final double getDiscount(int qty){  
         return discount.getDiscount(unitCost, qty);
     }
     
-    public String getProdID() {
+    public final String getProdID() {
         return prodID;
     }
 
-    public void setProdID(String prodID) {
+    public final void setProdID(String prodID) {
         this.prodID = prodID;
     }
 
-    public String getProdName() {
+    public final String getProdName() {
         return prodName;
     }
 
-    public void setProdName(String prodName) {
+    public final void setProdName(String prodName) {
         this.prodName = prodName;
     }
 
-    public double getUnitCost() {
+    public final double getUnitCost() {
         return unitCost;
     }
 
-    public void setUnitCost(double unitCost) {
+    public final void setUnitCost(double unitCost) {
         this.unitCost = unitCost;
     }
     
     
-    public static void main(String[] args) {
-        Product product = new Product("123", "Hat", 10, new QuantityDiscount());
-        double amt = product.getDiscount(4);
-        System.out.println(amt);
-    }
+//    public static void main(String[] args) {
+//        Product product = new Product("123", "Hat", 10, new QuantityDiscount());
+//        double amt = product.getDiscount(4);
+//        System.out.println(amt);
+//    }
 
 }

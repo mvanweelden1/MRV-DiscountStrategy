@@ -26,9 +26,9 @@ public class HolidayDiscount implements DiscountStrategy{
         this.rate = rate;
     }
     
-    public static void main(String[] args) {
-        HolidayDiscount discount = new HolidayDiscount();
-        double amt = discount.getDiscount(10, 2);
-        System.out.println(amt);
-    }
+//    public static void main(String[] args) {
+//        HolidayDiscount discount = new HolidayDiscount();
+//        double amt = discount.getDiscount(10, 2);
+//        System.out.println(amt);
+//    }
 }

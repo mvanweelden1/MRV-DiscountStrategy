@@ -36,11 +36,11 @@ public class QuantityDiscount implements DiscountStrategy {
         this.minQty = minQty;
     }
 
-    public static void main(String[] args) {
-        QuantityDiscount discount = new QuantityDiscount();
-        double amt = discount.getDiscount(10, 2);
-        System.out.println(amt);
-
-
-    }
+//    public static void main(String[] args) {
+//        QuantityDiscount discount = new QuantityDiscount();
+//        double amt = discount.getDiscount(10, 2);
+//        System.out.println(amt);
+//
+//
+//    }
 }

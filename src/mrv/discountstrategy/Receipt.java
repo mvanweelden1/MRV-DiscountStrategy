@@ -27,12 +27,12 @@ public class Receipt {
 
     }
 
-    public void addLineItem(Product product, int qty) {
+    public final void addLineItem(Product product, int qty) {
         LineItem item = new LineItem(product, qty);
         addToArray(item);
     }
 
-    private void addToArray(LineItem item) {
+    private final void addToArray(LineItem item) {
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
         tempItems[lineItems.length] = item;
@@ -64,7 +64,7 @@ public class Receipt {
         
     }
 
-    public void generateReceipt() {
+    public final void generateReceipt() {
         
         System.out.println("ID\t" + "Customer Name");
         System.out.println("----------------------------------");

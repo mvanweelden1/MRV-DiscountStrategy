@@ -14,23 +14,23 @@ public class Customer {
         this.name = name;
     }
     
-    public String getCustomerID() {
+    public final String getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(String customerID) {
+    public final void setCustomerID(String customerID) {
         this.customerID = customerID;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public final void setName(String name) {
         this.name = name;
     }
     
-    public void getCustomer() {
+    public final void getCustomer() {
         
         System.out.println(customerID + " " + name);
     }
