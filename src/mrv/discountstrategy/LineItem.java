@@ -15,6 +15,11 @@ public class LineItem {
         
     }
     
+    public double getUnitCost(){
+        
+        return this.product.getUnitCost();
+    }
+    
     public double getSubTotal() {
         
         double subTotal = (this.product.getUnitCost() * qty) - this.product.getDiscount(qty);
@@ -34,12 +39,22 @@ public class LineItem {
     
     
     
+    
+    
 //    public static void main(String[] args) {
 //        
 //        LineItem lineitem = new LineItem("B205", 2);
 //        
 //        System.out.println(lineitem.getLineItem());
 //    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
     
     
     

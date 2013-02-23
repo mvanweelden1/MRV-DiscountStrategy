@@ -7,15 +7,13 @@ package mrv.discountstrategy;
 public class Receipt {
 
     private LineItem[] lineItems = new LineItem[0];
-    
     private Customer customer;
 
-    public Receipt(String custID) {
-        addCustomer(custID);
+    public Receipt() {
     }
-      
-    public final void addCustomer(String custID){
-        
+
+    public final void addCustomer(String custID) {
+
         FakeDatabase db = new FakeDatabase();
         customer = db.findCustomer(custID);
     }
@@ -43,24 +41,53 @@ public class Receipt {
         lineItems = tempItems;
     }
 
-    public void generateReceipt() {
+    public final double getTotalBeforeDiscount() {
+
+        double total = 0.0;
+
+        for (int i = 0; i < lineItems.length; i++) {
+
+            total += (lineItems[i].getUnitCost() * lineItems[i].getQty());
+        }
         
+        return total;
+    }
+    
+    public final double getTotalAfterDiscount(){
+        
+        double total = 0.0;
+        
+         for (int i = 0; i < lineItems.length; i++) {
+
+            total += lineItems[i].getSubTotal();
+        }
+        
+        return total;
+        
+    }
+
+    public void generateReceipt() {
+
         customer.getCustomer();
 
         for (int i = 0; i < lineItems.length; i++) {
 
             System.out.println(lineItems[i].getLineItem());
         }
-    }
-
-    public static void main(String[] args) {
-
-        Receipt receipt = new Receipt("300");
-
-        receipt.generateReceipt();
-
-
-
+        
+        System.out.println("Total Before Discount: " + getTotalBeforeDiscount());
+        
+        System.out.println("Total After Discount: " + getTotalAfterDiscount());
 
     }
+//    public static void main(String[] args) {
+//
+//        Receipt receipt = new Receipt("300");
+//
+//        receipt.generateReceipt();
+//
+//
+//
+//
+//    }
 }
