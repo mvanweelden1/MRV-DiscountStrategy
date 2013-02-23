@@ -7,11 +7,9 @@ package mrv.discountstrategy;
 public class LineItem {
     
     private Product product;
-    private String prodID;
     private int qty;
 
     public LineItem(Product product, int qty) {
-        this.prodID = prodID;
         this.qty = qty;
         this.product = product;
         
@@ -33,6 +31,8 @@ public class LineItem {
                 
         
     }
+    
+    
     
 //    public static void main(String[] args) {
 //        

@@ -6,7 +6,20 @@ package mrv.discountstrategy;
  */
 public class Receipt {
 
-    LineItem[] lineItems = new LineItem[0];
+    private LineItem[] lineItems = new LineItem[0];
+    
+    private Customer customer;
+
+    public Receipt(String custID) {
+        addCustomer(custID);
+    }
+    
+    
+    public final void addCustomer(String custID){
+        
+        FakeDatabase db = new FakeDatabase();
+        customer = db.findCustomer(custID);
+    }
 
     public void addItemToSale(String prodId, int qty) {
         FakeDatabase db = new FakeDatabase();
@@ -32,6 +45,8 @@ public class Receipt {
     }
 
     public void generateReceipt() {
+        
+        customer.getCustomer();
 
         for (int i = 0; i < lineItems.length; i++) {
 
@@ -41,7 +56,7 @@ public class Receipt {
 
     public static void main(String[] args) {
 
-        Receipt receipt = new Receipt();
+        Receipt receipt = new Receipt("300");
 
         receipt.addItemToSale("B205", 1);
 
