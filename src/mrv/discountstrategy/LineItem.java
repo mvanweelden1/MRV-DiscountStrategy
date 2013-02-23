@@ -7,14 +7,13 @@ package mrv.discountstrategy;
 public class LineItem {
     
     private Product product;
-    private FakeDatabase database = new FakeDatabase();
     private String prodID;
     private int qty;
 
-    public LineItem(String prodID, int qty) {
+    public LineItem(Product product, int qty) {
         this.prodID = prodID;
         this.qty = qty;
-        product = database.findProduct(prodID);
+        this.product = product;
         
     }
     
@@ -35,12 +34,12 @@ public class LineItem {
         
     }
     
-    public static void main(String[] args) {
-        
-        LineItem lineitem = new LineItem("B205", 2);
-        
-        System.out.println(lineitem.getLineItem());
-    }
+//    public static void main(String[] args) {
+//        
+//        LineItem lineitem = new LineItem("B205", 2);
+//        
+//        System.out.println(lineitem.getLineItem());
+//    }
     
     
     
