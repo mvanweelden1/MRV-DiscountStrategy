@@ -10,12 +10,10 @@ public class Receipt {
     
     private Customer customer;
 
-    public Receipt(String custID, String prodID, int qty) {
+    public Receipt(String custID) {
         addCustomer(custID);
-        addItemToSale(prodID, qty);
     }
-    
-    
+      
     public final void addCustomer(String custID){
         
         FakeDatabase db = new FakeDatabase();
@@ -57,7 +55,7 @@ public class Receipt {
 
     public static void main(String[] args) {
 
-        Receipt receipt = new Receipt("300", "B205", 1);
+        Receipt receipt = new Receipt("300");
 
         receipt.generateReceipt();
 
