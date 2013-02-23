@@ -10,8 +10,9 @@ public class Receipt {
     
     private Customer customer;
 
-    public Receipt(String custID) {
+    public Receipt(String custID, String prodID, int qty) {
         addCustomer(custID);
+        addItemToSale(prodID, qty);
     }
     
     
@@ -21,7 +22,7 @@ public class Receipt {
         customer = db.findCustomer(custID);
     }
 
-    public void addItemToSale(String prodId, int qty) {
+    public final void addItemToSale(String prodId, int qty) {
         FakeDatabase db = new FakeDatabase();
         Product product = db.findProduct(prodId);
 
@@ -56,9 +57,7 @@ public class Receipt {
 
     public static void main(String[] args) {
 
-        Receipt receipt = new Receipt("300");
-
-        receipt.addItemToSale("B205", 1);
+        Receipt receipt = new Receipt("300", "B205", 1);
 
         receipt.generateReceipt();
 
