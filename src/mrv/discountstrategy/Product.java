@@ -21,6 +21,7 @@ public class Product {
     public double getDiscount(int qty){  
         return discount.getDiscount(unitCost, qty);
     }
+    
     public String getProdID() {
         return prodID;
     }
