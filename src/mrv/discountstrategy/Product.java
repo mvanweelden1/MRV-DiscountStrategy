@@ -46,6 +46,7 @@ public class Product {
         this.unitCost = unitCost;
     }
     
+    
     public static void main(String[] args) {
         Product product = new Product("123", "Hat", 10, new QuantityDiscount());
         double amt = product.getDiscount(4);

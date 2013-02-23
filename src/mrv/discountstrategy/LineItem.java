@@ -9,19 +9,27 @@ public class LineItem {
     private Product product;
     private FakeDatabase database = new FakeDatabase();
     private String prodID;
+    private int qty;
 
-    public LineItem(String prodID) {
+    public LineItem(String prodID, int qty) {
         this.prodID = prodID;
+        this.qty = qty;
         product = database.findProduct(prodID);
         
+    }
+    
+    public double getSubTotal() {
+        
+        double subTotal = (this.product.getUnitCost() * qty) - this.product.getDiscount(qty);
+        return subTotal;
     }
     
     public final String getLineItem(){
         String id = this.product.getProdID();
         String name = this.product.getProdName();
         double price = this.product.getUnitCost();
-        
-        return id + " " + name + " " + price;
+        double subTotal = this.getSubTotal();
+        return id + " " + name + " " + price + " " + subTotal;
         
                 
         
@@ -29,7 +37,7 @@ public class LineItem {
     
     public static void main(String[] args) {
         
-        LineItem lineitem = new LineItem("A101");
+        LineItem lineitem = new LineItem("A101", 2);
         
         System.out.println(lineitem.getLineItem());
     }
