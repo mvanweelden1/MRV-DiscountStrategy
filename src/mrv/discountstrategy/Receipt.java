@@ -16,7 +16,7 @@ public class Receipt {
         customer = db.findCustomer(custID);
     }
 
-    public final void addItemToSale(String prodId, int qty) {
+    public final void addItem(String prodId, int qty) {
         FakeDatabase db = new FakeDatabase();
         Product product = db.findProduct(prodId);
 
@@ -32,7 +32,7 @@ public class Receipt {
         addToArray(item);
     }
 
-    private final void addToArray(LineItem item) {
+    private void addToArray(LineItem item) {
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
         tempItems[lineItems.length] = item;

@@ -14,11 +14,11 @@ public class CashRegister {
 
     public final void addItemToSale(String prodID, int qty) {
 
-        receipt.addItemToSale(prodID, qty);
+        receipt.addItem(prodID, qty);
 
     }
 
-    public final void addCustomerToSale(String custID) {
+    public final void startTransaction(String custID) {
 
         receipt.addCustomer(custID);
     }
