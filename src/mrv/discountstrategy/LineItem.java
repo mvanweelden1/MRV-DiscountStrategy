@@ -17,12 +17,12 @@ public class LineItem {
     
     public final double getUnitCost(){
         
-        return this.product.getUnitCost();
+        return product.getUnitCost();
     }
     
     public final double getSubTotal() {
         
-        double subTotal = (this.product.getUnitCost() * qty) - this.product.getDiscount(qty);
+        double subTotal = (product.getUnitCost() * qty) - product.getDiscount(qty);
         return subTotal;
     }
     
@@ -35,10 +35,10 @@ public class LineItem {
     }
     
     public final String getLineItem(){
-        String id = this.product.getProdID();
-        String name = this.product.getProdName();
-        double price = this.product.getUnitCost();
-        double subTotal = this.getSubTotal();
+        String id = product.getProdID();
+        String name = product.getProdName();
+        double price = product.getUnitCost();
+        double subTotal = getSubTotal();
         
         return id + " " + name + "\t" + qty + "\t" + price + "\t\t" + subTotal;
         
