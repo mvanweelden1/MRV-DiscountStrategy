@@ -1,14 +1,22 @@
 package mrv.discountstrategy;
 
+import java.util.Date;
+
 /**
  *
  * @author Mark Van Weelden
  */
 public class Receipt {
 
+    private static int receiptNumber = 0;
     private LineItem[] lineItems = new LineItem[0];
     private Customer customer;
 
+    public Receipt() {
+
+        receiptNumber++;
+
+    }
 
     public final void addCustomer(String custID) {
 
@@ -47,25 +55,28 @@ public class Receipt {
 
             total += (lineItems[i].getUnitCost() * lineItems[i].getQty());
         }
-        
+
         return total;
     }
-    
-    public final double getTotalAfterDiscount(){
-        
+
+    public final double getTotalAfterDiscount() {
+
         double total = 0.0;
-        
-         for (int i = 0; i < lineItems.length; i++) {
+
+        for (int i = 0; i < lineItems.length; i++) {
 
             total += lineItems[i].getSubTotal();
         }
-        
+
         return total;
-        
+
     }
 
     public final void generateReceipt() {
-        
+
+        System.out.println("Receipt # " + receiptNumber);
+        Date date = new Date();
+        System.out.println(date.toString());
         System.out.println("ID\t" + "Customer Name");
         System.out.println("----------------------------------");
         customer.getCustomer();
@@ -76,12 +87,15 @@ public class Receipt {
 
             System.out.println(lineItems[i].getLineItem());
         }
-        
+
         System.out.println();
-        
+
         System.out.println("Total Before Discount: \t" + getTotalBeforeDiscount());
-        
+
         System.out.println("Total After Discount: \t" + getTotalAfterDiscount());
+        
+        System.out.println("\n\n");
+        
 
     }
 //    public static void main(String[] args) {

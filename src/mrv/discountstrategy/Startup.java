@@ -15,6 +15,7 @@ public class Startup {
         cr.startTransaction("300");
         cr.addItemToSale("A101", 3);
         cr.addItemToSale("B205", 5);
+        cr.addItemToSale("C222", 1);
         cr.finalizeSale();
         
         CashRegister cr2 = new CashRegister();
@@ -22,5 +23,10 @@ public class Startup {
         cr2.addItemToSale("A101", 5);
         cr2.addItemToSale("C222", 15);
         cr2.finalizeSale();
+        
+        CashRegister cr3 = new CashRegister();
+        cr3.startTransaction("300");
+        cr3.addItemToSale("D333", 1);
+        cr3.finalizeSale();
     }
 }

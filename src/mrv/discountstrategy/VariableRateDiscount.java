@@ -4,25 +4,35 @@ package mrv.discountstrategy;
  *
  * @author Mark Van Weelden
  */
-public class HolidayDiscount implements DiscountStrategy{
+public class VariableRateDiscount implements DiscountStrategy{
     
     private double rate = .10;
 
+    public VariableRateDiscount() {
+    }
+    
+    
+
+    public VariableRateDiscount(double rate) {
+        
+        setRate(rate);
+    }
+    
     
     @Override
-    public double getDiscount(double cost, int qty){
+    public final double getDiscount(double cost, int qty){
         return cost * qty * rate;
     }
 
     
     @Override
-    public double getRate() {
+    public final double getRate() {
         return rate;
     }
 
     
     @Override
-    public void setRate(double rate) {
+    public final void setRate(double rate) {
         this.rate = rate;
     }
     

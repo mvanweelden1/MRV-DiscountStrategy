@@ -9,8 +9,19 @@ public class QuantityDiscount implements DiscountStrategy {
     private int minQty = 2;
     private double rate = .10;
 
+    public QuantityDiscount() {
+    }
+    
+    public QuantityDiscount(double rate, int minQty) {
+        
+        setMinQty(minQty);
+        setRate(rate);
+        
+    }
+    
+
     @Override
-    public double getDiscount(double cost, int qty) {
+    public final double getDiscount(double cost, int qty) {
         if (qty >= minQty) {
             return cost * qty * rate;
         } else {
@@ -19,20 +30,20 @@ public class QuantityDiscount implements DiscountStrategy {
     }
 
     @Override
-    public double getRate() {
+    public final double getRate() {
         return rate;
     }
 
     @Override
-    public void setRate(double rate) {
+    public final void setRate(double rate) {
         this.rate = rate;
     }
 
-    public int getMinQty() {
+    public final int getMinQty() {
         return minQty;
     }
 
-    public void setMinQty(int minQty) {
+    public final void setMinQty(int minQty) {
         this.minQty = minQty;
     }
 
