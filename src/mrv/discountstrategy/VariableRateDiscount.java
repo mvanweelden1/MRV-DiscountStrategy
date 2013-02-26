@@ -14,6 +14,7 @@ public class VariableRateDiscount implements DiscountStrategy{
     
 
     public VariableRateDiscount(double rate) {
+        //validation needed
         
         setRate(rate);
     }
@@ -21,6 +22,7 @@ public class VariableRateDiscount implements DiscountStrategy{
     
     @Override
     public final double getDiscount(double cost, int qty){
+        //validation needed
         return cost * qty * rate;
     }
 
@@ -33,6 +35,7 @@ public class VariableRateDiscount implements DiscountStrategy{
     
     @Override
     public final void setRate(double rate) {
+        //validation needed
         this.rate = rate;
     }
     

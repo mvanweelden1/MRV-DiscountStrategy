@@ -10,6 +10,8 @@ public class Customer {
     private String name;
 
     public Customer(String customerID, String name) {
+        
+        //validation needed
         this.customerID = customerID;
         this.name = name;
     }
@@ -19,6 +21,7 @@ public class Customer {
     }
 
     public final void setCustomerID(String customerID) {
+        //validation needed
         this.customerID = customerID;
     }
 

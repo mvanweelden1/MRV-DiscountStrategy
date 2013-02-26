@@ -19,12 +19,13 @@ public class Receipt {
     }
 
     public final void addCustomer(String custID) {
-
+        //validation needed
         FakeDatabase db = new FakeDatabase();
         customer = db.findCustomer(custID);
     }
 
     public final void addItem(String prodId, int qty) {
+        //validation needed
         FakeDatabase db = new FakeDatabase();
         Product product = db.findProduct(prodId);
 
@@ -36,11 +37,13 @@ public class Receipt {
     }
 
     public final void addLineItem(Product product, int qty) {
+        //validation needed
         LineItem item = new LineItem(product, qty);
         addToArray(item);
     }
 
     private void addToArray(LineItem item) {
+        //validation needed
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
         tempItems[lineItems.length] = item;
@@ -81,7 +84,7 @@ public class Receipt {
         System.out.println("----------------------------------");
         customer.getCustomer();
         System.out.println("==================================");
-        System.out.println("Prod ID" + "  Prod Name\t" + "Qty\t" + "Unit Price\t" + "Subtotal");
+        System.out.println("Prod ID" + "  Prod Name\t" + "Qty\t" + "Unit Price\t" + "Subtotal\t" + "Discount");
 
         for (int i = 0; i < lineItems.length; i++) {
 
@@ -93,6 +96,8 @@ public class Receipt {
         System.out.println("Total Before Discount: \t" + getTotalBeforeDiscount());
 
         System.out.println("Total After Discount: \t" + getTotalAfterDiscount());
+        
+        System.out.println("You saved: " + (getTotalBeforeDiscount() - getTotalAfterDiscount()));
         
         System.out.println("\n\n");
         

@@ -12,13 +12,16 @@ public class Product {
     private DiscountStrategy discount;
 
     public Product(String prodID, String prodName, double unitCost, DiscountStrategy discount) {
+        
+        //validation needed
         this.prodID = prodID;
         this.prodName = prodName;
         this.unitCost = unitCost;
         this.discount = discount;
     }
     
-    public final double getDiscount(int qty){  
+    public final double getDiscount(int qty){
+        //validation needed
         return discount.getDiscount(unitCost, qty);
     }
     
@@ -27,6 +30,7 @@ public class Product {
     }
 
     public final void setProdID(String prodID) {
+        //validation needed
         this.prodID = prodID;
     }
 
@@ -35,6 +39,7 @@ public class Product {
     }
 
     public final void setProdName(String prodName) {
+        //validation needed
         this.prodName = prodName;
     }
 
@@ -43,6 +48,7 @@ public class Product {
     }
 
     public final void setUnitCost(double unitCost) {
+        //validation needed
         this.unitCost = unitCost;
     }
     

@@ -10,6 +10,7 @@ public class LineItem {
     private int qty;
 
     public LineItem(Product product, int qty) {
+        //validation needed
         this.qty = qty;
         this.product = product;
         
@@ -31,6 +32,7 @@ public class LineItem {
     }
 
     public final void setQty(int qty) {
+        //validation needed
         this.qty = qty;
     }
     
@@ -39,8 +41,9 @@ public class LineItem {
         String name = product.getProdName();
         double price = product.getUnitCost();
         double subTotal = getSubTotal();
+        double discount = product.getDiscount(qty);
         
-        return id + " " + name + "\t" + qty + "\t" + price + "\t\t" + subTotal;
+        return id + " " + name + "\t" + qty + "\t" + price + "\t\t" + subTotal + "\t\t" + discount;
         
                 
         

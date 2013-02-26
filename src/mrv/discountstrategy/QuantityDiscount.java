@@ -22,6 +22,7 @@ public class QuantityDiscount implements DiscountStrategy {
 
     @Override
     public final double getDiscount(double cost, int qty) {
+        //validation needed
         if (qty >= minQty) {
             return cost * qty * rate;
         } else {
@@ -36,6 +37,7 @@ public class QuantityDiscount implements DiscountStrategy {
 
     @Override
     public final void setRate(double rate) {
+        //validation needed
         this.rate = rate;
     }
 
@@ -44,6 +46,7 @@ public class QuantityDiscount implements DiscountStrategy {
     }
 
     public final void setMinQty(int minQty) {
+        //validation needed
         this.minQty = minQty;
     }
 
