@@ -44,21 +44,11 @@ public class Receipt {
         customer = db.findCustomer(custID);
     }
 
-    public final void addItem(String prodId, int qty) {
+  
+
+    public final void addItem(String prodID, int qty) {
         //validation needed
-        FakeDatabase db = new FakeDatabase();
-        Product product = db.findProduct(prodId);
-
-
-        if (product != null) {
-            addLineItem(product, qty);
-        }
-
-    }
-
-    public final void addLineItem(Product product, int qty) {
-        //validation needed
-        LineItem item = new LineItem(product, qty);
+        LineItem item = new LineItem(prodID, qty);
         addToArray(item);
     }
 

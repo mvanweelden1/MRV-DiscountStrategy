@@ -1,8 +1,9 @@
 package mrv.discountstrategy;
 
 /**
- *
+ *This is the startup class for the discount strategy project
  * @author Mark Van Weelden
+ * @version 1.00
  */
 public class Startup {
 

@@ -9,10 +9,12 @@ public class LineItem {
     private Product product;
     private int qty;
 
-    public LineItem(Product product, int qty) {
+    public LineItem(String prodID, int qty) {
         //validation needed
+        FakeDatabase db = new FakeDatabase();
+        product = db.findProduct(prodID);
         this.qty = qty;
-        this.product = product;
+        
         
     }
     
