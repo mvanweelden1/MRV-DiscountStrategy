@@ -1,8 +1,9 @@
 package mrv.discountstrategy;
 
 /**
- *
- * @author Mark Van Weelden
+ *This class is used to create line items for retail transaction receipt.
+ * 
+ * @author Mark Van Weelden <mvanweelden1@my.wctc.edu>
  */
 public class LineItem {
     
@@ -10,19 +11,28 @@ public class LineItem {
     private int qty;
 
     public LineItem(String prodID, int qty) {
-        //validation needed
+        if(prodID == null || prodID.length() == 0 || qty < 0){
+            System.out.println("Error: invalid entry");
+            return;
+        }
         FakeDatabase db = new FakeDatabase();
         product = db.findProduct(prodID);
         this.qty = qty;
         
         
     }
-    
+    /**
+     * Used to get the unit cost of an item
+     * @return unitCost
+     */
     public final double getUnitCost(){
         
         return product.getUnitCost();
     }
-    
+    /**
+     * Used to get the subtotal of the lineItem
+     * @return subtotal
+     */
     public final double getSubTotal() {
         
         double subTotal = (product.getUnitCost() * qty) - product.getDiscount(qty);

@@ -1,8 +1,8 @@
 package mrv.discountstrategy;
 
 /**
- *
- * @author Mark Van Weelden
+ *This class is an abstraction layer for the retail discount strategies.
+ * @author Mark Van Weelden <mvanweelden1@my.wctc.edu>
  */
 public interface DiscountStrategy {
 

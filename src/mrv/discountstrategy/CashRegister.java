@@ -1,7 +1,7 @@
 package mrv.discountstrategy;
 
 /**
- *This class acts as the cash register for the discount strategy project
+ *This class is used to create cash register objects that handle retail transactions
  * 
  * @author Mark Van Weelden <mvanweelden1@my.wctc.edu>
  * @version 1.00

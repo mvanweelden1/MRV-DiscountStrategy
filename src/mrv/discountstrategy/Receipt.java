@@ -94,7 +94,7 @@ public class Receipt {
         System.out.println(formattedDate);
         System.out.println("ID\t" + "Customer Name");
         System.out.println("----------------------------------");
-        customer.getCustomer();
+        System.out.println(customer.getCustomerString());
         System.out.println("==================================");
         System.out.println("Prod ID" + "  Description\t" + "Qty\t" + "Unit Price\t" + "Subtotal\t" + "Discount");
 

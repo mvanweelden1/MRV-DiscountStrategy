@@ -1,8 +1,9 @@
 package mrv.discountstrategy;
 
 /**
- *
- * @author Mark Van Weelden
+ *This class serves as a fake database containing product and customer objects
+ * 
+ * @author Mark Van Weelden <mvanweelden1@my.wctc.edu>
  */
 public class FakeDatabase {
 
@@ -19,9 +20,16 @@ public class FakeDatabase {
           new Customer("300", "Van Weelden, Mark")
           
       };
-      
+      /**
+       * Used to find a product in the fake database from the product ID
+       * @param prodId a string containing the product ID
+       * @return the product object
+       */
      public final Product findProduct(final String prodId) {
-         //validation needed
+         if(prodId == null || prodId.length() == 0){
+             System.out.println("Error: Invalid product ID");
+             return null;
+         }
 	        Product product = null;
 	        for(Product p : products) {
 	            if(prodId.equals(p.getProdID())) {
@@ -32,9 +40,17 @@ public class FakeDatabase {
 
 	        return product;
 	    }
-	
+     /**
+      * Used to find a customer in the fake database using the customer ID
+      * @param custID a string containing the customer ID
+      * @return customer object
+      */
      public final Customer findCustomer(final String custID){
-         //validation needed
+         if(custID == null || custID.length() == 0){
+             
+             System.out.println("Error: invalid customer ID");
+             return null;
+         }
          Customer customer = null;
          for(Customer c : customers){
              if(custID.equals(c.getCustomerID())){

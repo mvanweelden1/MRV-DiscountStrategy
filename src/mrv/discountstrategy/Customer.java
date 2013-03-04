@@ -1,8 +1,10 @@
 package mrv.discountstrategy;
 
 /**
- *
- * @author Mark Van Weelden
+ *This class is used to create customer objects with a name and an ID number
+ * 
+ * @author Mark Van Weelden <mvanweelden1@my.wctc.edu>
+ * @version 1.00
  */
 public class Customer {
     
@@ -10,32 +12,55 @@ public class Customer {
     private String name;
 
     public Customer(String customerID, String name) {
-        
-        //validation needed
+        if (customerID == null || customerID.length() == 0 || name == null || name.length() == 0){
+            
+            System.out.println("Error: invalid entry");
+            return;
+        }
         this.customerID = customerID;
         this.name = name;
     }
-    
+    /**
+     * gets  the customer ID
+     * @return  the customer ID String
+     */
     public final String getCustomerID() {
         return customerID;
     }
-
+    /**
+     * sets the customer ID
+     * @param customerID a String containing the customer ID
+     */
     public final void setCustomerID(String customerID) {
-        //validation needed
+        if(customerID == null || customerID.length() == 0){
+            
+            System.out.println("Error: Invalid customer ID");
+            return;
+        }
         this.customerID = customerID;
     }
-
+    /**
+     * get customer name
+     * @return customer name as a string
+     */
     public final String getName() {
         return name;
     }
-
+    /**
+     * set the customer name
+     * @param name a string containing the customer name
+     */
     public final void setName(String name) {
         this.name = name;
     }
-    
-    public final void getCustomer() {
+    /**
+     * used to get a String containing the customer ID and customer name
+     * @return customerString 
+     */
+    public final String getCustomerString() {
         
-        System.out.println(customerID + " " + name);
+        String customerString = customerID + " " +  name;
+        return customerString;
     }
 
 }
